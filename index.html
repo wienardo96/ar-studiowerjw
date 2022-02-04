@@ -30,10 +30,12 @@
                 <a-image
                     src="assets/asset.gif"
                     class="clickable"
+            rotation="-90 0 0"
+            gesture-handler
                 ></a-image>
             </a-marker>
 
-            <a-entity camera geometry="primitive:box" material="shader:gif;src:url(assets/asset.gif);" gif=""></a-entity>
+            <a-entity camera geometry="primitive:box" material="shader:gif;src:url(assets/asset.gif);" gif="assets/asset.gif"></a-entity>
         </a-scene>
     </body>
 </html>
