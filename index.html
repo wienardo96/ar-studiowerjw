@@ -9,7 +9,7 @@
 
   <body style="margin: 0; overflow: hidden">
     <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
-      <a-assets>
+      <!-- <a-assets>
         <video
           id="vid"
           crossorigin="anonymous"
@@ -21,6 +21,19 @@
           webkit-playsinline
         ></video>
       </a-assets>
+
+      <a-marker-camera type="pattern" preset="custom" url="assets/marker.patt">
+        <a-video
+          src="#vid"
+          scale="1 1 1"
+          position="0 0.5 0"
+          rotation="270 0 0"
+        ></a-video>
+      </a-marker-camera> -->
+
+      <a-video src="assets/asset.mp4"></a-video>
+
+      <a-marker-camera preset="hiro"></a-marker-camera>
 
       <a-entity camera></a-entity>
     </a-scene>
