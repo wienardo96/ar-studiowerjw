@@ -8,49 +8,34 @@
   </head>
 
   <body style="margin: 0; overflow: hidden">
-    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
-      <!-- <a-assets>
-        <video
-          id="vid"
-          crossorigin="anonymous"
-          type="video/mp4"
-          src="assets/asset.mp4"
-          autoplay
-          loop="true"
-          playsinline
-          webkit-playsinline
-        ></video>
-      </a-assets>
+    <a-assets>
+      <video
+        id="penguin-sledding"
+        autoplay
+        loop="true"
+        muted="true"
+        src="assets/asset.mp4"
+      ></video>
+    </a-assets>
 
-      <a-marker-camera type="pattern" preset="custom" url="assets/marker.patt">
+    <a-scene embedded arjs>
+      <a-marker preset="hiro">
+        <!-- <a-box position='0 0.5 0' material='color: yellow; opacity: 0.5;'></a-box> -->
         <a-video
-          src="#vid"
-          scale="1 1 1"
+          src="#penguin-sledding"
           position="0 0.5 0"
           rotation="270 0 0"
+          play="true"
         ></a-video>
-      </a-marker-camera> -->
-
-      <a-video src="assets/asset.mp4"></a-video>
-
-      <a-marker-camera preset="hiro"></a-marker-camera>
-
+      </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
 
     <script>
-      window.addEventListener(
-        "click",
-        function () {
-          var video = document.querySelector("#vid");
-          if (video.paused == true) {
-            video.play();
-          } else {
-            video.pause();
-          }
-        },
-        false
-      );
+      window.addEventListener("click", function () {
+        var v = document.querySelector("#penguin-sledding");
+        v.play();
+      });
     </script>
   </body>
 </html>
